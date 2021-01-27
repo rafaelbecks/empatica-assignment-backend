@@ -5,7 +5,7 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class AppDownload extends Model {
     static associate ({ App }) {
-      this.belongsTo(App)
+      this.belongsTo(App, { as: 'app' })
     }
   };
   AppDownload.init({

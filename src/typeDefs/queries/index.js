@@ -1,6 +1,6 @@
 export const queriesDef = `
 type Query {
-  appSearch(query: String): AppSearchResult
-  appDownloadsSearch(query: String): AppDownloadSearchResult
+  getAvailableApps(query: String): [App]
+  getAppDownloads(query: String): [AppDownload]
 }
 `

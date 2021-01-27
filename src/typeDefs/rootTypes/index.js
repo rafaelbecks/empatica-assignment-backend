@@ -1,18 +1,5 @@
 export const rootTypesDef = `
-scalar Coordinates
 scalar DateTime
-
-type PointGeometry {
-  type: String
-  coordinates: Coordinates
-}
-
-type Pagination {
-  perPage: Int
-  pages: Int
-  page: Int
-  items: Int
-}
 
 type App {
   id: String
@@ -24,16 +11,8 @@ type App {
 
 type AppDownload {
   app: App
-  location: PointGeometry
+  latitude: Float
+  longitude: Float
   downloadedAt: DateTime
-}
-
-type AppSearchResult {
-  pagination: Pagination
-  results: [App]
-}
-type AppDownloadSearchResult {
-  pagination: Pagination
-  results: [AppDownload]
 }
 `

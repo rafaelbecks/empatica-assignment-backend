@@ -8,15 +8,11 @@ These instructions will get you a copy of the project up and running on your loc
 
 + NodeJS Installed
 + Nodemon
-+ Docker and Docker Compose
++ SQlite 3
 
 ### Getting Started
 
 #### Environment
-
-Up docker container for mongo
-
-    docker-compose up -d
 
 Install node modules (we recommend using yarn)
 
@@ -29,9 +25,22 @@ Copy .env.example to .env
 Setup your environment variables
 
     PORT=4000
-    MONGO_DB_USER=
-    MONGO_DB_NAME=
-    MONGO_DB_PASSWORD=
+
+#### Setting up database and generating data
+
+This example uses a local SQlite database, for create the database with the tables run
+
+    npx sequelize-cli db:migrate
+
+For creating data run the following seeds
+
+    npx sequelize-cli db:seed --seed src/seeders/20210127033545-demo-apps.js
+
+And then for generating app downloads just run:
+
+    npx sequelize-cli db:seed --seed src/seeders/20210127033551-demo-app-downloads.js
+
+WIth that you generate 50 random app downloads, for changing the number change GENERATED_DATA_LENGTH on the same file
 
 #### Running
 

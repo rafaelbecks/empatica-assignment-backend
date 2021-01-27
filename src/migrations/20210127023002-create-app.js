@@ -21,6 +21,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      platform: {
+        type: Sequelize.ENUM('IOS', 'ANDROID'),
+        allowNull: false
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
